@@ -50,20 +50,20 @@ def orders_transformed(orders_raw: pd.DataFrame) -> pd.DataFrame:
         df['order_id'] = df['order_id'].astype(int)
         
         # Handle customer_id - use 0 as default if not present
-        if 'customer_id' in df.columns:
-            df['customer_id'] = df['customer_id'].astype(int)
-        else:
-            df['customer_id'] = 0
+        # if 'customer_id' in df.columns:
+        #     df['customer_id'] = df['customer_id'].astype(int)
+        # else:
+        #     df['customer_id'] = 0
         
-        # # Handle customer_id - require it to be present and non-null
-#         if 'customer_id' not in df.columns:
-#             raise ValueError("customer_id column is required")
+        # Handle customer_id - require it to be present and non-null
+        if 'customer_id' not in df.columns:
+            raise ValueError("customer_id column is required")
         
-#         df['customer_id'] = df['customer_id'].astype(int)
+        df['customer_id'] = df['customer_id'].astype(int)
         
-#         # Check for null customer_id values and raise error
-#         if df['customer_id'].isna().any():
-#             raise ValueError("customer_id contains null values")
+        # Check for null customer_id values and raise error
+        if df['customer_id'].isna().any():
+            raise ValueError("customer_id contains null values")
 
         # Keep additional columns if present (amount, status, etc.)
         emit_event("ASSET_SUCCESS", "orders_pipeline", "orders_transformed", "SUCCESS",

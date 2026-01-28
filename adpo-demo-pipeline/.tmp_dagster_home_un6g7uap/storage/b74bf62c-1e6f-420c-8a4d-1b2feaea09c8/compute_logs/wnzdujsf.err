@@ -1,0 +1,7 @@
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - 85852 - LOGS_CAPTURED - Started capturing logs in process (pid: 85852).
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - 85852 - orders_raw - STEP_START - Started execution of step "orders_raw".
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - 85852 - orders_raw - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - orders_raw - Writing file at: /workspaces/adpo/adpo-demo-pipeline/.tmp_dagster_home_un6g7uap/storage/orders_raw using PickledObjectFilesystemIOManager...
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - 85852 - orders_raw - ASSET_MATERIALIZATION - Materialized value orders_raw.
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - 85852 - orders_raw - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2026-01-28 13:49:51 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b74bf62c-1e6f-420c-8a4d-1b2feaea09c8 - 85852 - orders_raw - STEP_SUCCESS - Finished execution of step "orders_raw" in 175ms.

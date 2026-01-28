@@ -19,7 +19,7 @@ def fetch_orders():
             "FAILED",
             {"http_code": response.status_code}
         )
-        raise Exception("API Failure: http {}").format(response.status_code)
+        raise Exception("API Failure: http {}".format(response.status_code))
 
     # Validate payload shape — expect a list of order dicts
     data = response.json()
