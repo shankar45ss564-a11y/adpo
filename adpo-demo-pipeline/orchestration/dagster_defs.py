@@ -55,6 +55,16 @@ def orders_transformed(orders_raw: pd.DataFrame) -> pd.DataFrame:
         else:
             df['customer_id'] = 0
         
+        # # Handle customer_id - require it to be present and non-null
+#         if 'customer_id' not in df.columns:
+#             raise ValueError("customer_id column is required")
+        
+#         df['customer_id'] = df['customer_id'].astype(int)
+        
+#         # Check for null customer_id values and raise error
+#         if df['customer_id'].isna().any():
+#             raise ValueError("customer_id contains null values")
+
         # Keep additional columns if present (amount, status, etc.)
         emit_event("ASSET_SUCCESS", "orders_pipeline", "orders_transformed", "SUCCESS",
                    {"rows": len(df), "columns": list(df.columns)})
@@ -95,3 +105,6 @@ orders_pipeline_job = define_asset_job(
     selection="*",
     executor_def=in_process_executor,
 )
+
+
+

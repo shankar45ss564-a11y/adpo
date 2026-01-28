@@ -5,3 +5,5 @@ pandas
 dagster
 dagster-duckdb
 dagster-duckdb-pandas
+flask
+dagster-webserver
