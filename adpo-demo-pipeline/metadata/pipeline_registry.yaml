@@ -1,18 +1,22 @@
-pipeline_id: orders_daily
+pipeline_id: orders_pipeline
 owner: data-team
 criticality: high
+orchestrator: dagster
 sla:
   freshness_minutes: 60
   max_failed_runs_per_day: 1
 
-tasks:
-  - task_id: ingest_orders
+assets:
+  - asset_id: orders_raw
     type: ingestion
+    description: Raw orders data from API
 
-  - task_id: transform_orders
+  - asset_id: orders_transformed
     type: transform
-    depends_on: [ingest_orders]
+    depends_on: [orders_raw]
+    description: Transformed and validated orders data
 
-  - task_id: quality_check
+  - asset_id: orders_validated
     type: validation
-    depends_on: [transform_orders]
+    depends_on: [orders_transformed]
+    description: Quality-checked orders data

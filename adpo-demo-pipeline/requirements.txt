@@ -1,5 +1,6 @@
-apache-airflow
 requests
 great-expectations
 duckdb
 pandas
+dagster
+dagster-duckdb

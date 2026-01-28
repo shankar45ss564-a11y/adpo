@@ -1,0 +1,44 @@
+[32m2026-01-28 12:12:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 697d382f-47f1-4fa9-8776-4790e7839ce0 - 22971 - LOGS_CAPTURED - Started capturing logs in process (pid: 22971).
+[32m2026-01-28 12:12:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 697d382f-47f1-4fa9-8776-4790e7839ce0 - 22971 - orders_transformed - STEP_START - Started execution of step "orders_transformed".
+[32m2026-01-28 12:12:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 697d382f-47f1-4fa9-8776-4790e7839ce0 - orders_transformed - Loading file from: /workspaces/adpo/adpo-demo-pipeline/.tmp_dagster_home_xc4ii2en/storage/orders_raw using PickledObjectFilesystemIOManager...
+[32m2026-01-28 12:12:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 697d382f-47f1-4fa9-8776-4790e7839ce0 - 22971 - orders_transformed - LOADED_INPUT - Loaded input "orders_raw" using input manager "io_manager", from output "result" of step "orders_raw"
+[32m2026-01-28 12:12:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 697d382f-47f1-4fa9-8776-4790e7839ce0 - 22971 - orders_transformed - STEP_INPUT - Got input "orders_raw" of type "Any". (Type check passed).
+[32m2026-01-28 12:12:08 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 697d382f-47f1-4fa9-8776-4790e7839ce0 - 22971 - orders_transformed - STEP_FAILURE - Execution of step "orders_transformed" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "orders_transformed"::
+
+KeyError: 'customer_id'
+
+Stack Trace:
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/adpo/adpo-demo-pipeline/orchestration/dagster_defs.py", line 45, in orders_transformed
+    df['customer_id'] = df['customer_id'].astype(int)
+                        ~~^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+
+The above exception was caused by the following exception:
+KeyError: 'customer_id'
+
+Stack Trace:
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+[0m

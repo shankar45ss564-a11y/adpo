@@ -1,0 +1,4 @@
+{"event_id": "bf085c4f-f2ce-4c46-8b43-8a6bfef6db48", "event_type": "ASSET_START", "pipeline_id": "orders_pipeline", "task_id": "orders_raw", "status": "STARTED", "timestamp": "2026-01-28T12:12:05.951779", "context": {}}
+{"event_id": "d060af4e-d8a8-4765-8bb2-e545a5b828c6", "event_type": "TASK_START", "pipeline_id": "orders_pipeline", "task_id": "fetch_orders", "status": "STARTED", "timestamp": "2026-01-28T12:12:05.951863", "context": {}}
+{"event_id": "7177d148-cbf3-4dbd-95c5-cf14e6d1d9bf", "event_type": "TASK_SUCCESS", "pipeline_id": "orders_pipeline", "task_id": "fetch_orders", "status": "SUCCESS", "timestamp": "2026-01-28T12:12:06.333365", "context": {}}
+{"event_id": "69437d1c-5555-4bb4-9bb8-0d7053ca9091", "event_type": "ASSET_SUCCESS", "pipeline_id": "orders_pipeline", "task_id": "orders_raw", "status": "SUCCESS", "timestamp": "2026-01-28T12:12:06.333600", "context": {}}

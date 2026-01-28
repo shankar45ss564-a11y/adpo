@@ -1,0 +1,2 @@
+{"event_id": "98787191-c540-4bf9-bd04-9a5403d5d390", "event_type": "ASSET_START", "pipeline_id": "orders_pipeline", "task_id": "orders_transformed", "status": "STARTED", "timestamp": "2026-01-28T12:14:20.872379", "context": {}}
+{"event_id": "7e04a062-e198-4c92-a5fa-9018cc3eaf4b", "event_type": "ASSET_SUCCESS", "pipeline_id": "orders_pipeline", "task_id": "orders_transformed", "status": "SUCCESS", "timestamp": "2026-01-28T12:14:20.872597", "context": {}}
