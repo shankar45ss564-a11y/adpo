@@ -1,2 +1,0 @@
-{"event_id": "2269508a-c407-4fb8-a4d1-c666bfb9ebac", "event_type": "ASSET_START", "pipeline_id": "orders_pipeline", "task_id": "orders_validated", "status": "STARTED", "timestamp": "2026-01-28T13:50:02.225187", "context": {}}
-{"event_id": "d6c2d6f5-3e60-4218-bcef-07282e57a4d6", "event_type": "ASSET_SUCCESS", "pipeline_id": "orders_pipeline", "task_id": "orders_validated", "status": "SUCCESS", "timestamp": "2026-01-28T13:50:02.229845", "context": {"rows": 4, "validation": "passed"}}
