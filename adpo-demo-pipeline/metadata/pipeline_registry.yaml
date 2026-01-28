@@ -1,0 +1,18 @@
+pipeline_id: orders_daily
+owner: data-team
+criticality: high
+sla:
+  freshness_minutes: 60
+  max_failed_runs_per_day: 1
+
+tasks:
+  - task_id: ingest_orders
+    type: ingestion
+
+  - task_id: transform_orders
+    type: transform
+    depends_on: [ingest_orders]
+
+  - task_id: quality_check
+    type: validation
+    depends_on: [transform_orders]
